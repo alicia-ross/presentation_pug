@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Présentation sur Pug HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="../node_modules/reveal.js/dist/theme/white.css"> <!-- Choix de thème -->
+    <script src="../node_modules/reveal.js/dist/reveal.js" defer></script>
+    <script src="/src/assets/main.js" defer></script>
+    <link rel="stylesheet" href="/src/assets/styles.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 1 -->
+            <section class="intro-section">
+                <h1>Pug</h1>
+                <p class="intro-paragraph">Par Alicia Ross</p>
+                <p  class="intro-paragraph">Recherche et développement - PMI 2024</p>
+                <img class="intro-img" src="./assets/img/654e4caeb871114e96e79f798b52eaea.jpg" alt="">
+            </section>
+
+            <!-- Slide 2 -->
+            <section class="pug-section">
+                <h2 class="pug-title">Qu'est-ce que Pug ?</h2>
+                <p class="pug-paragraph">Pug est un moteur de templates principalement pour Node.js qui permet de générer du code HTML de manière efficace et concise.</p>
+                <p class="pug-paragraph">Pug simplifie la création de pages web en utilisant une syntaxe propre et lisible, qui élimine le besoin de balises de fermeture avec l'indentation.</p>
+                <pre class="pug-code"><code>
+                    div.container
+                        h1 Titre
+                        p Ceci est un paragraphe en Pug
+                </code></pre>
+                <img class="pug-img" src="./assets/img/1_6mf8tptIWbepPFZT07EDvQ.webp" alt="">
+            </section>
+
+            <!-- Slide 3 -->
+            <section class="pug-section">
+                <h2 class="pug-title">Principales caractéristiques</h2>
+                <ul class="pug-paragraph">
+                    <li>Syntaxe simplifiée : Pug utilise une syntaxe basée sur l'indentation, ce qui réduit le besoin de balises HTML répétitives.</li>
+                    <li>Interpolation de données : Pug permet d'insérer facilement des données dynamiques dans le HTML en utilisant une simple syntaxe de substitution.</li>
+                    <li>Partials et mixins : Pug permet de créer des fragments réutilisables de code HTML (partials) et des fonctions pour générer du HTML (mixins), ce qui facilite la modularité et la maintenance du code.</li>
+                    <li>Prise en charge des fonctionnalités modernes : Pug prend en charge les fonctionnalités HTML5 et CSS3, ainsi que des outils comme Sass et LESS pour le style.</li>
+                </ul>
+                <img class="pug-img" src="./assets/img/1_6mf8tptIWbepPFZT07EDvQ.webp" alt="">
+            </section>
+
+            <!-- Slide 4 -->
+            <section class="pug-section">
+                <h2 class="pug-title">Son histoire</h2>
+                <ul class="pug-paragraph">
+                    <li>Pug a commencé sous le nom de Jade, créé par Tim Griesser en 2010. L'idée était de proposer un moteur de templates léger et flexible pour Node.js, qui permettrait aux développeurs de générer du HTML sans avoir à écrire des balises répétitives et complexes.</li>
+                    <li>La suppression des balises de fermeture et l'usage de l'indentation pour organiser le code étaient des caractéristiques qui ont rapidement séduit les développeurs.</li>
+                    <li>En 2015, le projet a dû changer de nom, car "Jade" était un nom de marque déposée, ce qui posait un problème légal. Le projet a donc été rebaptisé Pug.</li>
+                    <li>Le changement de nom s'est accompagné d'une mise à jour majeure du moteur, offrant de nouvelles fonctionnalités et améliorations de performances. La communauté a adopté Pug assez rapidement, et le moteur a continué à croître.</li>
+                </ul>
+                <img class="pug-img" src="./assets/img/jade.webp" alt="">
+            </section>
+
+                <!-- Slide 5 -->
+                <section class="pug-section">
+                    <h2 class="pug-title">Indentation et structure</h2>
+                    <p class="pug-paragraph"> Contrairement au HTML traditionnel, qui nécessite l'utilisation de balises d'ouverture et de fermeture explicites, Pug s'appuie sur des niveaux d'indentation pour organiser et imbriquer les éléments.</p>
+                    <p class="pug-paragraph">La position des éléments est déterminée par leur niveau d'indentation, ce qui rend le code beaucoup plus lisible. Plus un élément est imbriqué, plus il est indenté.</p>
+                    <pre class="pug-code"><code>
+                        body
+                            header
+                                h1 Bienvenue
+                            main
+                                p Ceci est un paragraphe dans la section principale.
+                            footer
+                                p © 2024 Mon site web
+                    </code></pre>
+                    <ul class="pug-paragraph">
+                        <li>Header, main, et footer sont directement à l'intérieur de la balise body</li>
+                        <li>Les éléments h1 et p se trouvent à l'intérieur de leurs parents</li>
+                    </ul>
+                </section>
+
+                <!-- Slide 6 -->
+                <section class="pug-section">
+                    <h2 class="pug-title">Comparaison avec HTML</h2>
+                    <p class="intro-paragraph">PUG</p>
+                    <pre class="pug-code"><code>
+                        body
+                            header
+                                h1 Bienvenue
+                            main
+                                p Ceci est un paragraphe dans la section principale.
+                            footer
+                                p © 2024 Mon site web
+                    </code></pre>
+                    <p class="intro-paragraph">HTML</p>
+                    <pre class="pug-code"><code>
+                        &lt;body&gt;
+                            &lt;header&gt;
+                                &lt;h1&gt;Bienvenue&lt;/h1&gt;
+                            &lt;/header&gt;
+                            &lt;main&gt;
+                                &lt;p&gt;Ceci est un paragraphe dans la section principale.&lt;/p&gt;
+                            &lt;/main&gt;
+                            &lt;footer&gt;
+                                &lt;p&gt;© 2024 Mon site web&lt;/p&gt;
+                            &lt;/footer&gt;
+                        &lt;/body&gt;
+                            </code></pre>
+                </section>
+
+                <!-- Slide 7 -->
+                <section class="pug-section">
+                    <h2 class="pug-title">Variables en Pug</h2>
+                    <p class="pug-paragraph">Pug permet d'utiliser des variables pour rendre le code plus dynamique et réutilisable. Les variables peuvent être définies en haut du fichier Pug et utilisées partout dans le document.</p>
+                    <p class="pug-paragraph">Cela permet de modifier facilement des valeurs sans avoir à chercher à travers le code entier.</p>
+                    <pre class="pug-code"><code>
+                        - var title = "Bienvenue"
+                        
+                        body
+                            header
+                                h1= title  
+                            main
+                                p Ceci est un paragraphe dans la section principale.
+                            footer
+                                p © 2024 Mon site web
+                    </code></pre>
+                    <ul class="pug-paragraph">
+                        <li>La variable <code>title</code> est définie avec la valeur <code>"Bienvenue"</code>.</li>
+                        <li>La syntaxe <code>=</code> permet d'afficher la valeur de la variable dans l'élément <code>h1</code>.</li>
+                    </ul>
+                </section>
+                
+
+                <!-- Slide 8 -->
+                <section class="pug-section">
+                    <h2 class="pug-title">Expressions & Interpolations</h2>
+                    <p class="pug-paragraph">Les interpolations dans Pug ne se limitent pas seulement à l'insertion de variables ; elles peuvent également inclure des expressions. Cela permet d'effectuer des calculs ou de manipuler des valeurs directement dans le code.</p>
+                    <p class="pug-paragraph">Pour utiliser une expression, il suffit de l'écrire entre les accolades dans l'interpolation. Par exemple :</p>
+                    <pre class="pug-code"><code>
+                        p Le résultat de 5 + 3 est #{5 + 3}.
+                        p La date d'aujourd'hui est #{new Date().toLocaleDateString()}.
+                    </code></pre>
+                    <ul class="pug-paragraph">
+                        <li>Dans cet exemple, l'expression <code>5 + 3</code> est évaluée et le résultat (8) est affiché.</li>
+                        <li>La deuxième interpolation utilise une méthode JavaScript pour afficher la date actuelle, montrant la flexibilité de Pug pour intégrer des opérations dynamiques.</li>
+                    </ul>
+                </section>
+                
+
+                <!-- Slide 9 -->
+                <section class="pug-section">
+                    <h2 class="pug-title">Conditions en Pug</h2>
+                    <p class="pug-paragraph">Les structures conditionnelles permettent d'exécuter un bloc de code en fonction de certaines conditions. En Pug, vous pouvez utiliser les conditions avec la syntaxe de JavaScript.</p>
+                    <pre class="pug-code"><code>
+                        if (age >= 18)
+                            p Vous êtes majeur.
+                        else
+                            p Vous êtes mineur.
+                    </code></pre>
+                    <p class="pug-paragraph">Ce code affiche un message selon l'âge de la personne.</p>
+                    <pre class="pug-code"><code>
+                        if (stock > 0)
+                            p Produit disponible
+                        else
+                            p Produit épuisé
+                    </code></pre>
+                    <p class="pug-paragraph">Ce code affiche un message indiquant si le produit est disponible ou non.</p>
+                </section>
+
+
+                <!-- Slide 11 -->
+                <section class="pug-section">
+                    <h2 class="pug-title">Boucles en Pug</h2>
+                    <p class="pug-paragraph">Pug permet de parcourir facilement des tableaux ou des objets grâce à des boucles comme <code>each</code>. Cela permet de générer du contenu répétitif de manière concise.</p>
+                
+                    <!-- Exemple du code Pug avec une boucle each -->
+                    <pre class="pug-code"><code>
+                        //- Définir un tableau d'éléments
+                        - var fruits = ['Pomme', 'Banane', 'Cerise']
+                
+                        //- Boucle pour afficher chaque fruit
+                        each fruit in fruits
+                            li= fruit
+                    </code></pre>
+                
+                    <!-- Code HTML généré par Pug -->
+                    <pre class="pug-code"><code>
+                        &lt;ul&gt;
+                            &lt;li&gt;Pomme&lt;/li&gt;
+                            &lt;li&gt;Banane&lt;/li&gt;
+                            &lt;li&gt;Cerise&lt;/li&gt;
+                        &lt;/ul&gt;
+                    </code></pre>
+                
+                    <ul class="pug-paragraph">
+                        <li>La boucle <code>each</code> parcourt chaque élément du tableau <code>fruits</code>.</li>
+                        <li>Pour chaque élément, un élément <code>&lt;li&gt;</code> est généré avec le nom du fruit.</li>
+                    </ul>
+                </section>
+
+
+                <!-- Slide 11 -->
+                <section class="pug-section">
+                    <h2 class="pug-title">Mixins</h2>
+                    <p class="pug-paragraph">Les mixins en Pug permettent de réutiliser du code, simplifiant ainsi la création de composants récurrents avec des paramètres personnalisés.</p>
+                
+                    <!-- Exemple du code Pug avec un mixin -->
+                    <pre class="pug-code"><code>
+                        //- Définition d'un mixin pour créer un bouton avec un texte
+                        mixin bouton(texte)
+                            button.btn= texte
+                
+                        //- Utilisation du mixin pour générer plusieurs boutons
+                        +bouton('Envoyer')
+                        +bouton('Annuler')
+                        +bouton('Réessayer')
+                    </code></pre>
+                    
+                    <!-- Code HTML généré par Pug -->
+                    <pre class="pug-code"><code>
+                        &lt;button class="btn"&gt;Envoyer&lt;/button&gt;
+                        &lt;button class="btn"&gt;Annuler&lt;/button&gt;
+                        &lt;button class="btn"&gt;Réessayer&lt;/button&gt;
+                    </code></pre>
+                
+                    <ul class="pug-paragraph">
+                        <li>Le mixin <code>bouton</code> permet de générer un bouton avec un texte personnalisé.</li>
+                        <li>Les différents boutons sont générés à partir du même mixin, mais avec des valeurs de texte différentes.</li>
+                    </ul>
+                </section>
+                
+                <section class="pug-section">
+                    <h2 class="pug-title">Partials</h2>
+                    <p class="pug-paragraph">
+                    Les partials en Pug permettent de diviser des sections de code en fichiers séparés et réutilisables. Cela
+                    améliore la structure du projet et réduit la duplication de code.
+                    </p>
+                
+                    <pre class="pug-code">
+                    <code>
+                        //- Exemple d'un fichier partial (header.pug)
+                        header
+                        nav
+                            ul
+                            li: a(href='/') Accueil
+                            li: a(href='/about') À propos
+                            li: a(href='/contact') Contact
+                    </code>
+                    </pre>
+                
+                    <pre class="pug-code">
+                    <code>
+                        //- Utilisation d'un partial dans un fichier principal (index.pug)
+                        include header.pug
+                        
+                        main
+                        h1 Bienvenue sur notre site
+                        p Ceci est une page d'exemple utilisant des partials en Pug.
+                    </code>
+                    </pre>
+                
+                    <ul class="pug-paragraph">
+                    <li>Cela permet de mettre à jour plusieurs pages en même temps en modifiant un seul fichier.</li>
+                    </ul>
+                </section>
+
+
+                <!-- Slide 12 -->
+                <section class="pug-section">
+                    <h2 class="pug-title">Ma Prise en Main de Pug</h2>
+                
+                    <p class="intro-paragraph">Points forts</p>
+                    <ul class="pug-paragraph">
+                        <li><strong>Simplicité :</strong> Grâce à l'indentation et à l'absence de balises fermantes, Pug offre une syntaxe propre et lisible.</li>
+                        <li><strong>Réutilisation du code :</strong> Les mixins et variables permettent de rendre le code plus modulaire et évitent la répétition.</li>
+                    </ul>
+                
+                    <p class="intro-paragraph">Points faibles</p>
+                    <ul class="pug-paragraph">
+                        <li><strong>Courbe d'apprentissage :</strong> La syntaxe spécifique de Pug peut être difficile au début, surtout pour ceux habitués au HTML traditionnel.</li>
+                    </ul>
+                    <img class="pug-img" src="./assets/img/1_6mf8tptIWbepPFZT07EDvQ.webp" alt="">
+                
+                </section>
+                
+
+                <!-- Slide 13 -->
+                <section class="pug-section">
+                    <h2 class="pug-title">Installation d'un Projet Pug</h2>
+                
+                    <ul class="pug-paragraph">
+                        <li><strong>Créer un nouveau projet Node.js :</strong></li>
+                    </ul>
+                
+                    <pre class="pug-code"><code>
+                    mkdir projet-pug
+                    cd projet-pug
+                    npm init -y
+                    </code></pre>
+                
+                    <ul class="pug-paragraph">
+                        <li><strong>Installer Pug :</strong></li>
+                    </ul>
+                
+                    <pre class="pug-code"><code>
+                    npm install express pug
+                    </code></pre>
+                    <p class="pug-paragraph">Express est un framework web pour Node.js qui peut être intégré avec des moteurs de templates pour générer du HTML dynamique.</p>
+
+                </section>
+
+
+
+                <section class="pug-section">
+                    <h2 class="pug-title">Liens Utiles</h2>
+                    <p class="pug-paragraph">
+                        Voici quelques ressources et liens utiles pour en apprendre davantage sur Pug et améliorer votre maîtrise du langage :
+                    </p>
+                    <ul class="pug-paragraph">
+                        <!-- Ajoute tes liens ici -->
+                        <li><a href="https://www.youtube.com/playlist?list=PLVvjrrRCBy2JbOPP2JXfCtADABI1QHzWg" target="_blank">Tutoriels Pug</a></li>
+                        <li><a href="https://pugjs.org/api/getting-started.html" target="_blank">Getting started</a></li>
+                        <li><a href="https://www.sitepoint.com/a-beginners-guide-to-pug/" target="_blank">Guide du débutant Pug</a></li>
+                        <li><a href="https://expressjs.com/en/guide/using-template-engines.html" target="_blank">Documentation Express</a></li>
+                    </ul>
+                    </section>
+        </div>
+        
+</body>                    
+</html>
