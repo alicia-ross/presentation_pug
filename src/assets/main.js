@@ -13,5 +13,5 @@ Reveal.initialize({
     pdfMaxPagesPerSlide: 1,      // Une seule diapositive par page
     pdfPageHeight: 1050,         // Hauteur de la page en pixels (facultatif)
     pdfPageWidth: 1485,          // Largeur de la page en pixels (facultatif)
-    pdfViewer: true              // Ouvre le fichier PDF dans un viewer
+    pdfViewer: true,              // Ouvre le fichier PDF dans un viewer
 });
